@@ -1,0 +1,37 @@
+class Solution {
+    public List<Integer> pancakeSort(int[] A) {
+        List<Integer> lst = new ArrayList<Integer>();
+        int idx = A.length-1;
+        while(idx>0){
+            if((idx+1!=A[idx])){
+               int numPos = getNumPos(A,idx+1); 
+               flip(A,numPos+1);
+               flip(A,idx+1); 
+               lst.add(numPos+1);
+               lst.add(idx+1);
+            }
+            idx--;
+        }
+        return lst;
+    }
+    
+    private int getNumPos(int[] A,int num){
+        int idx = 0;
+        for(int n : A){
+            if(n==num)return idx;
+            idx++;
+        }
+        return idx;
+    }
+    
+    private void flip(int[] A, int K){
+        int l = 0;
+        int r = K-1;
+        while(l<r){
+            int tmp = A[l];
+            A[l] = A[r];
+            A[r] = tmp;
+            l++;r--;
+        }
+    }
+}
