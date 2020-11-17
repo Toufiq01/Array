@@ -10,7 +10,15 @@ public class Solution {
 
     // Complete the camelcase function below.
     static int camelcase(String s) {
-
+        int count = (s == null)? 0:1;
+        char characterArray[] = s.toCharArray();
+        int n = characterArray.length;
+        for(int i=0; i<n ; i++){
+            if(Character.isUpperCase(characterArray[i])){
+                count++;
+            }
+        }
+        return count;
 
     }
 
