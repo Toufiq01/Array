@@ -1,0 +1,11 @@
+class Solution {
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        String concateString1 = String.join("",word1);
+        String concateString2 = String.join("",word2);
+        int compare = concateString1.compareTo(concateString2);
+        if(compare == 0) return true;
+        else return false;
+    }
+}
+// Runtime: 1 ms, faster than 42.86% of Java online submissions for Check If Two String Arrays are Equivalent.
+// Memory Usage: 37.3 MB, less than 57.14% of Java online submissions for Check If Two String Arrays are Equivalent.
