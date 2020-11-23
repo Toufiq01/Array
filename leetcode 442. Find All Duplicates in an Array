@@ -1,7 +1,7 @@
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
         ArrayList<Integer> result = new ArrayList<>();
-        int[] array = new int[2*nums.length];
+        int[] array = new int[nums.length+1];
         for(Integer i : nums){
             array[i]++;
         }
@@ -12,7 +12,7 @@ class Solution {
     }
 }
 // Runtime: 4 ms, faster than 97.96% of Java online submissions for Find All Duplicates in an Array.
-// Memory Usage: 47.4 MB, less than 94.32% of Java online submissions for Find All Duplicates in an Array.
+// Memory Usage: 47.3 MB, less than 94.32% of Java online submissions for Find All Duplicates in an Array.
 
 //or
 class Solution {
