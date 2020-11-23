@@ -1,6 +1,23 @@
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
-        // HashMap<Integer> map = new HashMap<Integer>();
+        ArrayList<Integer> result = new ArrayList<>();
+        int[] array = new int[2*nums.length];
+        for(Integer i : nums){
+            array[i]++;
+        }
+        for(int i=0; i<array.length; i++){
+            if(array[i]> 1) result.add(i);
+        }
+        return result;
+    }
+}
+// Runtime: 4 ms, faster than 97.96% of Java online submissions for Find All Duplicates in an Array.
+// Memory Usage: 47.4 MB, less than 94.32% of Java online submissions for Find All Duplicates in an Array.
+
+//or
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        // HashMap<Integer> map = new HashMap<Integer>(); eta wrong 2 perameter needed
         HashMap<Integer,Integer> map=new HashMap<Integer,Integer>();
         ArrayList<Integer> result = new ArrayList<>();
         for(int i=0; i< nums.length; i++){
