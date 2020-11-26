@@ -1,0 +1,15 @@
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        int[] result = new int[nums.length];
+        for(int i=0; i<nums.length; i++){
+            int count = 0;
+            for(int j=0; j<nums.length; j++){
+                if(nums[i]>nums[j]) count++;
+            }
+            result[i] = count;
+        }
+        return result;
+    }
+}
+// Runtime: 14 ms, faster than 17.61% of Java online submissions for How Many Numbers Are Smaller Than the Current Number.
+// Memory Usage: 41.1 MB, less than 6.23% of Java online submissions for How Many Numbers Are Smaller Than the Current Number.
