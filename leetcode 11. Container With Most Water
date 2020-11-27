@@ -1,0 +1,14 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int maxcon = 0;
+        for(int i =0; i<height.length; i++){
+            for(int j=i+1; j<height.length; j++){
+                int min = Math.min(height[i],height[j]);
+                maxcon = Math.max(min*(j-i),maxcon);
+            }
+        }
+        return maxcon;
+    }
+}
+// Runtime: 839 ms, faster than 6.68% of Java online submissions for Container With Most Water.
+// Memory Usage: 49.3 MB, less than 5.58% of Java online submissions for Container With Most Water.
